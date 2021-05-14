@@ -27,14 +27,7 @@ class Cupcake(db.Model):
     )
 
     rating = db.Column(db.Float(), nullable=False)
-    image = db.Column(
-        db.Text,
-    )
-
-    def image_url(self):
-        """Return image for pet -- bespoke or generic."""
-
-        return self.image or GENERIC_IMAGE
+    image = db.Column(db.Text, default=GENERIC_IMAGE)
 
 
 def connect_db(app):
