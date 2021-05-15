@@ -2,7 +2,7 @@ const BASE_URL = "http://127.0.0.1:5000/api";
 
 function showCupcakes(cupcake) {
   return `
-<div data-id=${cupcake.id}>
+<div data-id=${cupcake.id} class="col">
 <li>Flavor:<b>${cupcake.flavor}</b>
 <ul>
       <li>Size: ${cupcake.size}</li>
