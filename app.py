@@ -4,9 +4,10 @@ from flask import Flask, request, jsonify, render_template
 from models import db, connect_db, Cupcake
 
 app = Flask(__name__)
+app.config["SECRET_KEY"] = "the quick brown fox jumps over the lazy  dog"
 app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql:///cupcake_db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-app.config["SQLALCHEMY_ECHO"] = True
+app.config["SECRET_KEY"] = "the quick brown fox jumps over the lazy  dog"
 
 connect_db(app)
 
@@ -50,9 +51,11 @@ def create_cupcake():
     flavor = request.json["flavor"]
     size = request.json["size"]
     rating = request.json["rating"]
-    image = request.json["image"] or None
+    # image = request.json["image"] or None
 
-    new_cupcake = Cupcake(flavor=flavor, size=size, rating=rating, image=image)
+    new_cupcake = Cupcake(
+        flavor=flavor, size=size, rating=rating, image=request.json["image"] or None
+    )
 
     db.session.add(new_cupcake)
     db.session.commit()

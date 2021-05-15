@@ -5,11 +5,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" <title>Cupcakes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Cupcakes</title>
 </head>
 
 <body>
+    <div class="container">
+        <h1>Cupcakes!</h1>
+        <ul id="cupcakelist">
+
+        </ul>
+        <h2>Make a new Cupcake!</h2>
+        <form id="newcupcake">
+            <div class="form-group">
+                <label for="flavor">Flavor</label>
+                <input type="text" class="form-control" id="flavor" placeholder="Enter a flavor" required>
+            </div>
+            <div class="form-group">
+                <label for="size">Size</label>
+                <input type="text" class="form-control" id="size" placeholder="What size?" required>
+            </div>
+            <div class="form-group">
+                <label for="image">Image URL</label>
+                <input type="url" class="form-control" id="image" placeholder="Image Url">
+            </div>
+            <div class="form-group">
+                <label for="rating">Rating</label>
+                <input type="number" step="0.1" class="form-control" id="rating" placeholder="Rating out of 5" min="0"
+                    max="5.0" required>
+            </div>
+            <button id="submitCupcake" class="btn btn-info">Submit</button>
+        </form>
+    </div>
+    <script src="https://unpkg.com/jquery"></script>
+    <script src="https://unpkg.com/axios/dist/axios.js"></script>
+    <script src="/static/app.js"></script>
 
 </body>
 
